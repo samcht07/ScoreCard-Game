@@ -1,0 +1,57 @@
+
+<!--Actually the project based on Vanilla JS completely without any library and framework of Javascript. It's number Game between two player, first Player wants to press the Player1 button and Second player to Button Player2, continue upto target number, Who reach the target Score then they win the Game and gets result as green Score and through alert box-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Score card </title>
+	<link rel="stylesheet" type="text/css" href="CSS/scorekeeper.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style type="text/css">
+		h1{
+			font-family: lobster, Monospace;
+			font-size: 50%;
+
+		}
+		.score{
+			  background: #fc00ff; /* fallback for old browsers */
+  			background: -webkit-linear-gradient(to top, #fc00ff, #00dbde); /* Chrome 10-25, Safari 5.1-6 */
+ 			 background: linear-gradient(to right, #fc00ff, #00dbde); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+			text-align: center;
+			font-size: 300px;
+			
+		}
+		.para{
+			color:#ff0066;
+		}
+		body{
+			 background: #AAFFA9;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to top, #11FFBD, #AAFFA9);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #11FFBD, #AAFFA9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		}
+
+		input{
+			border-radius: 6px;
+			border-color: green;
+			background-color: #66ccff;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="score">
+			<h1 class="font-family:"><span id="score1"><large>0</large></span> <strong>to</strong> <span id="score2" class="p2display">0</span></h1>
+		</div>
+			
+	
+		
+	<p class="para">Playing to : <span class="set">5</span></p>
+
+	<label class="">Enter a number:  </label><input type="number" name="number" >
+	<button id="p1" class="btn btn-info">Player 1</button>
+	<button id="p2" class="btn btn-warning">Player 2</button>
+	<button id="reset" class="btn btn-success">Reset</button></div>
+	
+<script type="text/javascript" src="js/scorekeeper.js"></script>
+</body>
+</html>
