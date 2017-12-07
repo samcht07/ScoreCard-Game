@@ -1,0 +1,8 @@
+
+		table, td, tr{
+			border-collapse: collapse;
+			border-spacing: 5px;
+			text-align: center;
+			border-width: 1px;		
+			width: 1200px;	
+			margin :15px 0 0 70px;
