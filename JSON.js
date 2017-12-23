@@ -1,28 +1,37 @@
-
+$("#search").keydown(function(){
 $.getJSON("https://data.cityofnewyork.us/resource/m6d4-riyp.json", function(result){
-    /*    $.each(result, function(i, field){ });Optional conditional loop to retrieve JSON file */
- 
-var table=document.querySelector("table");
+var search = $('#search').val();
+var expression = new RegExp(search, 'i');
+var output;
+output+="<tr>";
+		output+="<th>" +"SchoolIDN"+ "</th>";
+		output+="<th>" +"School Name"+ "</th>";
+		output+="<th>" +"City"+ "</th>";
+		output+="<th>" +"Address"+ "</th>";		
+		output+="<th>" +"Name_Prog1"+ "</th>";
+		output+="<th>" +"Phone"+ "</th>";
+		output+="<th>" +"Website"+ "</th>";		
+		output+="</tr>";
 
-for(var i=0; i<result.length; i++){
-	 var tr=$('<tr>');
+$.each(result, function(key, val){
+	if((val.schooldbn.search(expression)) != -1 || (val.printedschoolname.search(expression)) != -1 ||
+         (val.neighborhood.search(expression)) != -1){
+		output+="<tr>";
+		output+="<td id='"+key+"'>"+val.schooldbn+"</td>";
+		output+="<td id='"+key+"'>"+val.printedschoolname+"</td>";
+		output+="<td id='"+key+"'>"+val.neighborhood+"</td>";
+		output+="<td id='"+key+"'>"+val.address+"</td>";
+		output+="<td id='"+key+"'>"+val.telephone+"</td>";
+		output+="<td id='"+key+"'>"+val.name_prog1+"</td>";
+		output+="<td id='"+key+"'>"+val.independentwebsite+"</td>";
+		output+="</tr>";
+	}
 
-		tr.append("<td>" +result[i].schooldbn+ "</td>");
+});
 
-		tr.append("<td>" +result[i].printedschoolname+ "</td>");
-	
-		tr.append("<td>" +result[i].neighborhood+ "</td>");
-	
-		tr.append("<td>" +result[i].address+ "</td>");
+$('tbody').html(output);
+});
 
-		tr.append("<td>" +result[i].telephone+ "</td>");
-		
-		tr.append("<td>" +result[i].name_prog1+ "</td>");
-		
-		tr.append("<td>" +result[i].independentwebsite+ "</td>");
-	$(table).append(tr);
-			}
-        });
-   
+})
 
 
